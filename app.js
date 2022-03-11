@@ -10,6 +10,12 @@ var bookmarksRouter = require('./routes/bookmarks');
 
 var app = express();
 
+var bodyParser  = require("body-parser");   //nuevo
+var cors = require('cors');   //nuevo
+app.use(cors());  //nuevo
+app.use(bodyParser.json({limit: '50mb'}));  //nuevo
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));   //nuevo
+
 var mongoose = require('mongoose');
 
 require('dotenv').config();
