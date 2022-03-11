@@ -9,6 +9,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://jesus:CursoMERN2019@cluster0.40okh.mongodb.net/mernflix?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() =>  console.log('mymerndb connection successful'))
+    .catch((err) => console.error(err));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
